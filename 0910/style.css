@@ -1,0 +1,157 @@
+/* style.css */
+
+/* 기본 스타일 초기화 및 폰트 설정 */
+body {
+    font-family: 'Noto Sans KR', sans-serif; /* 예시 폰트 */
+    margin: 0;
+    line-height: 1.6;
+    background-color: #f9f9f9;
+}
+
+/* 모든 페이지에 적용될 기본 레이아웃 */
+.container {
+    width: 80%;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* 헤더와 푸터 스타일 */
+header {
+    background: #2c3e50;
+    color: #fff;
+    padding: 1rem 0;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    display: flex; /* 로고/타이틀과 햄버거 메뉴를 한 줄에 */
+    justify-content: space-between; /* 양 끝 정렬 */
+    align-items: center; /* 세로 중앙 정렬 */
+    padding: 1rem 5%; /* 좌우 패딩 추가 */
+}
+
+.header-brand {
+    display: flex;
+    align-items: center;
+    color: #fff;
+    text-decoration: none;
+}
+
+.header-brand .logo {
+    font-size: 1.8rem;
+    font-weight: bold;
+    margin-right: 10px;
+    color: #1abc9c; /* 로고 색상 */
+}
+
+.header-brand .title {
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+
+/* 네비게이션 메뉴 (기본 숨김, 모바일에서 토글) */
+nav {
+    display: none; /* 기본적으로 숨김 */
+}
+
+nav.active { /* JavaScript로 active 클래스가 추가되면 보이도록 */
+    display: block;
+    position: absolute;
+    top: 60px; /* 헤더 높이만큼 아래에 위치 (조정 필요) */
+    left: 0;
+    width: 100%;
+    background: #34495e; /* 메뉴 배경색 */
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    z-index: 1000;
+}
+
+nav a {
+    color: #fff;
+    text-decoration: none;
+    padding: 15px 20px; /* 메뉴 아이템 패딩 */
+    display: block; /* 세로로 나열 */
+    font-size: 1.1rem;
+    font-weight: bold;
+    transition: background-color 0.3s;
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+}
+
+nav a:last-child {
+    border-bottom: none;
+}
+
+nav a:hover {
+    background-color: #1abc9c;
+}
+
+/* 햄버거 메뉴 아이콘 */
+.menu-toggle {
+    display: none; /* 기본적으로 숨김 */
+    flex-direction: column;
+    justify-content: space-between;
+    width: 30px;
+    height: 21px;
+    cursor: pointer;
+    position: relative;
+    z-index: 1001; /* 메뉴보다 위에 오도록 */
+}
+
+.menu-toggle span {
+    display: block;
+    width: 100%;
+    height: 3px;
+    background: #fff;
+    border-radius: 3px;
+    transition: all 0.3s ease-in-out;
+}
+
+/* 햄버거 메뉴 X 버튼 애니메이션 */
+.menu-toggle.active span:nth-child(1) {
+    transform: translateY(9px) rotate(45deg);
+}
+
+.menu-toggle.active span:nth-child(2) {
+    opacity: 0;
+}
+
+.menu-toggle.active span:nth-child(3) {
+    transform: translateY(-9px) rotate(-45deg);
+}
+
+/* 푸터 (하단 정보) */
+footer {
+    text-align: center;
+    padding: 20px;
+    background: #eee;
+    margin-top: 30px;
+    font-size: 0.9rem;
+    color: #555;
+}
+
+/* 반응형 웹을 위한 미디어 쿼리 */
+@media (min-width: 769px) { /* PC 버전일 때 */
+    nav {
+        display: block; /* PC에서는 메뉴를 항상 보이게 */
+        position: static; /* position 해제 */
+        background: none; /* 배경색 제거 */
+        box-shadow: none; /* 그림자 제거 */
+    }
+    nav a {
+        display: inline-block; /* 메뉴 아이템 가로로 정렬 */
+        padding: 0 15px; /* 패딩 조정 */
+        border-bottom: none; /* 하단 선 제거 */
+    }
+    .menu-toggle {
+        display: none; /* PC에서는 햄버거 메뉴 숨김 */
+    }
+}
+
+@media (max-width: 768px) { /* 모바일 버전일 때 */
+    .container {
+        width: 95%;
+    }
+    header {
+        padding: 1rem 20px; /* 모바일 헤더 패딩 */
+    }
+    .menu-toggle {
+        display: flex; /* 햄버거 메뉴 아이콘 보이기 */
+    }
+}

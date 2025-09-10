@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>레포트 - 나의 포트폴리오</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .report-list {
+            background-color: #fff;
+            padding: 25px;
+            border-radius: 8px;
+        }
+        .report-item {
+            border-bottom: 1px solid #e0e0e0;
+            padding: 15px 0;
+        }
+        .report-item:last-child {
+            border-bottom: none;
+        }
+        .report-item h3 {
+            margin-top: 0;
+            color: #2c3e50;
+        }
+        .report-item a {
+            display: inline-block;
+            margin-top: 10px;
+            padding: 8px 15px;
+            background-color: #1abc9c;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+        .report-item a:hover {
+            background-color: #16a085;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <a href="index.html" class="header-brand">
+            <span class="logo">P.</span>
+            <span class="title">My Portfolio</span>
+        </a>
+        <div class="menu-toggle" id="menuToggle">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+        <nav id="mainNav">
+            <a href="index.html">소개</a>
+            <a href="report.html">레포트</a>
+            <a href="project.html">프로젝트</a>
+            <a href="portfolio.html">포트폴리오</a>
+        </nav>
+    </header>
+
+    <div class="container">
+        <div class="report-list">
+            <h1>학습 레포트 📚</h1>
+            <article class="report-item">
+                <h3>[레포트 제목 1]</h3>
+                <p><strong>과목명:</strong> [과목 이름]</p>
+                <p>[레포트에 대한 간단한 설명과 배운 점 등을 작성합니다.]</p>
+                <a href="[레포트 파일 경로 or 링크]" download>레포트 다운로드</a>
+            </article>
+            
+            <article class="report-item">
+                <h3>[레포트 제목 2]</h3>
+                <p><strong>과목명:</strong> [과목 이름]</p>
+                <p>[레포트에 대한 간단한 설명과 배운 점 등을 작성합니다.]</p>
+                <a href="[레포트 파일 경로 or 링크]" target="_blank">온라인으로 보기</a>
+            </article>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2025 [이름]. All rights reserved.</p>
+    </footer>
+
+    <script>
+        document.getElementById('menuToggle').addEventListener('click', function() {
+            var nav = document.getElementById('mainNav');
+            nav.classList.toggle('active');
+            this.classList.toggle('active');
+        });
+    </script>
+</body>
+</html>

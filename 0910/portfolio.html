@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>포트폴리오 - 나의 포트폴리오</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .portfolio-gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 15px;
+            margin-top: 30px;
+        }
+        .item {
+            position: relative;
+            overflow: hidden;
+            border-radius: 8px;
+            cursor: pointer;
+        }
+        .item img {
+            width: 100%;
+            height: 100%;
+            display: block;
+            object-fit: cover;
+            transition: transform 0.4s ease-out;
+        }
+        .item:hover img {
+            transform: scale(1.1);
+        }
+        .overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.6);
+            color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            opacity: 0;
+            transition: opacity 0.4s;
+            text-align: center;
+            padding: 15px;
+        }
+        .item:hover .overlay {
+            opacity: 1;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <a href="index.html" class="header-brand">
+            <span class="logo">P.</span>
+            <span class="title">My Portfolio</span>
+        </a>
+        <div class="menu-toggle" id="menuToggle">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+        <nav id="mainNav">
+            <a href="index.html">소개</a>
+            <a href="report.html">레포트</a>
+            <a href="project.html">프로젝트</a>
+            <a href="portfolio.html">포트폴리오</a>
+        </nav>
+    </header>
+
+    <div class="container">
+        <h1 style="text-align: center;">포트폴리오 🎨</h1>
+        <p style="text-align: center;">저의 역량을 보여주는 결과물들입니다.</p>
+        
+        <div class="portfolio-gallery">
+            <div class="item">
+                <img src="portfolio1.jpg" alt="포트폴리오 1">
+                <div class="overlay"><span>[작품명 또는 간단한 설명]</span></div>
+            </div>
+            <div class="item">
+                <img src="portfolio2.jpg" alt="포트폴리오 2">
+                <div class="overlay"><span>[웹 디자인 시안]</span></div>
+            </div>
+            <div class="item">
+                <img src="portfolio3.jpg" alt="포트폴리오 3">
+                <div class="overlay"><span>[로고 디자인]</span></div>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2025 [이름]. All rights reserved.</p>
+    </footer>
+
+    <script>
+        document.getElementById('menuToggle').addEventListener('click', function() {
+            var nav = document.getElementById('mainNav');
+            nav.classList.toggle('active');
+            this.classList.toggle('active');
+        });
+    </script>
+</body>
+</html>

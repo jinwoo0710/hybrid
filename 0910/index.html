@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>소개 - 나의 포트폴리오</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .profile {
+            text-align: center;
+            padding: 40px 0;
+        }
+        .profile img {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            border: 5px solid #1abc9c;
+        }
+        .introduction {
+            background-color: #fff;
+            padding: 25px;
+            border-radius: 8px;
+            text-align: center;
+        }
+        audio {
+            width: 100%;
+            max-width: 400px;
+            margin-top: 15px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <a href="index.html" class="header-brand">
+            <span class="logo">P.</span>
+            <span class="title">My Portfolio</span>
+        </a>
+        <div class="menu-toggle" id="menuToggle">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+        <nav id="mainNav">
+            <a href="index.html">소개</a>
+            <a href="report.html">레포트</a>
+            <a href="project.html">프로젝트</a>
+            <a href="portfolio.html">포트폴리오</a>
+        </nav>
+    </header>
+
+    <div class="container">
+        <section class="profile">
+            <img src="profile.jpg" alt="프로필 사진">
+            <h1>안녕하세요, [이름]입니다 👋</h1>
+            <p>저는 [자신을 나타내는 한 문장]을 추구하는 개발자 지망생입니다.</p>
+        </section>
+        
+        <section class="introduction">
+            <h2>저에 대해 더 알고 싶으신가요?</h2>
+            <p>[여기에 자신의 성장 과정, 가치관, 목표 등을 자유롭게 작성하세요.]</p>
+            <h3>목소리로 듣는 제 소개 🎤</h3>
+            <audio controls>
+                <source src="intro.mp3" type="audio/mpeg">
+                이 브라우저는 오디오 재생을 지원하지 않습니다.
+            </audio>
+        </section>
+    </div>
+
+    <footer>
+        <p>&copy; 2025 [이름]. All rights reserved.</p>
+    </footer>
+
+    <script>
+        document.getElementById('menuToggle').addEventListener('click', function() {
+            var nav = document.getElementById('mainNav');
+            nav.classList.toggle('active');
+            this.classList.toggle('active');
+        });
+    </script>
+</body>
+</html>

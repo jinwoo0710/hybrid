@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>프로젝트 - 나의 포트폴리오</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .project-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 25px;
+        }
+        .project-card {
+            background: #fff;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        .project-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        }
+        .project-card video, .project-card img {
+            width: 100%;
+            display: block;
+        }
+        .project-card .card-content {
+            padding: 20px;
+        }
+        .project-card h3 {
+            margin-top: 0;
+            color: #2c3e50;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <a href="index.html" class="header-brand">
+            <span class="logo">P.</span>
+            <span class="title">My Portfolio</span>
+        </a>
+        <div class="menu-toggle" id="menuToggle">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+        <nav id="mainNav">
+            <a href="index.html">소개</a>
+            <a href="report.html">레포트</a>
+            <a href="project.html">프로젝트</a>
+            <a href="portfolio.html">포트폴리오</a>
+        </nav>
+    </header>
+
+    <div class="container">
+        <h1 style="text-align: center;">진행 프로젝트 🚀</h1>
+        <div class="project-grid">
+            <div class="project-card">
+                <video controls muted loop poster="project_poster.jpg">
+                    <source src="project_demo.mp4" type="video/mp4">
+                    이 브라우저는 비디오 재생을 지원하지 않습니다.
+                </video>
+                <div class="card-content">
+                    <h3>[프로젝트 명 1]</h3>
+                    <p>[프로젝트에 대한 간략한 설명, 사용 기술, 자신의 역할 등을 작성합니다.]</p>
+                </div>
+            </div>
+            <div class="project-card">
+                <img src="project2.jpg" alt="프로젝트 2 이미지">
+                <div class="card-content">
+                    <h3>[프로젝트 명 2]</h3>
+                    <p>[프로젝트에 대한 간략한 설명, 사용 기술, 자신의 역할 등을 작성합니다.]</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2025 [이름]. All rights reserved.</p>
+    </footer>
+
+    <script>
+        document.getElementById('menuToggle').addEventListener('click', function() {
+            var nav = document.getElementById('mainNav');
+            nav.classList.toggle('active');
+            this.classList.toggle('active');
+        });
+    </script>
+</body>
+</html>
