@@ -1,0 +1,304 @@
+﻿/* 전체 레이아웃 및 기본 스타일 */
+:root {
+    --primary-color: #90CAF9; /* 파스텔 블루 */
+    --secondary-color: #FFAB91; /* 파스텔 오렌지 */
+    --text-color: #424242;
+    --bg-color-light: #F8F9FA;
+    --bg-color-dark: #64B5F6;
+    --border-color: #E0E0E0;
+    --font-sans: 'Helvetica Neue', Arial, sans-serif;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: var(--font-sans);
+    line-height: 1.6;
+    color: var(--text-color);
+    background-color: var(--bg-color-light);
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+.main-header {
+    background: var(--bg-color-dark);
+    color: white;
+    padding: 3rem 1rem;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+    /* 배경 이미지 대신 그라데이션 사용 */
+    background: linear-gradient(135deg, var(--primary-color), var(--bg-color-dark));
+}
+
+.main-header h1 {
+    font-size: 2.5rem;
+    font-weight: 300;
+    margin-bottom: 0.5rem;
+    letter-spacing: 2px;
+}
+
+.main-header .subtitle {
+    font-size: 1rem;
+    font-weight: 300;
+    opacity: 0.8;
+}
+
+.main-nav {
+    background-color: var(--primary-color);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.main-nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    padding: 0;
+}
+
+.main-nav li a {
+    display: block;
+    padding: 1rem 1.5rem;
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    text-transform: uppercase;
+    transition: background-color 0.3s ease;
+}
+
+.main-nav li a:hover,
+.main-nav li a.active {
+    background-color: var(--secondary-color);
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    width: 90%;
+    max-width: 1200px;
+    margin: 2rem auto;
+    gap: 2rem;
+    flex-grow: 1;
+}
+
+@media (min-width: 768px) {
+    .container {
+        flex-direction: row;
+    }
+}
+
+section {
+    background-color: white;
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+    flex: 3;
+}
+
+aside {
+    background-color: white;
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+    flex: 1;
+}
+
+h2 {
+    font-size: 1.5rem;
+    color: var(--primary-color);
+    border-left: 4px solid var(--secondary-color);
+    padding-left: 1rem;
+    margin-bottom: 1.5rem;
+}
+
+h3 {
+    font-size: 1.25rem;
+    color: var(--text-color);
+    margin-bottom: 1rem;
+}
+
+/* 자기소개 페이지 (mintro.html) */
+.profile-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.profile-pic {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 5px solid var(--border-color);
+    margin-bottom: 1.5rem;
+}
+
+.profile-section p {
+    font-size: 1rem;
+    line-height: 1.8;
+}
+
+/* 경력/학술/인적사항 페이지 공통 스타일 */
+.fancy-list {
+    list-style: none;
+    padding: 0;
+    margin-bottom: 2rem;
+}
+
+.fancy-list li {
+    background-color: var(--bg-color-light);
+    padding: 1rem;
+    border-radius: 5px;
+    margin-bottom: 0.5rem;
+    border-left: 3px solid var(--primary-color);
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.fancy-list .date {
+    font-weight: bold;
+    color: var(--secondary-color);
+    min-width: 100px;
+}
+
+.photo-gallery {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 1rem;
+    margin-bottom: 2rem;
+}
+
+.photo-gallery img {
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+    border-radius: 5px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.photo-gallery img:hover {
+    transform: scale(1.1);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.video-container {
+    margin-bottom: 2rem;
+    display: flex;
+    justify-content: center;
+}
+
+.video-container video {
+    width: 100%;
+    max-width: 600px;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.info-list {
+    list-style: none;
+    padding: 0;
+    margin-bottom: 2rem;
+}
+
+.info-list li {
+    padding: 0.5rem 0;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.info-list .info-label {
+    font-weight: bold;
+    color: var(--primary-color);
+    display: inline-block;
+    width: 80px;
+}
+
+.education-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 1rem;
+}
+
+.education-table th, .education-table td {
+    border: 1px solid var(--border-color);
+    padding: 0.75rem;
+    text-align: left;
+}
+
+.education-table thead {
+    background-color: var(--bg-color-light);
+    font-weight: bold;
+}
+
+.floating-logo {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    opacity: 0.1;
+    width: 200px;
+    height: auto;
+    z-index: 0;
+    pointer-events: none;
+}
+
+/* 참조 링크 섹션 */
+.links-section {
+    text-align: center;
+}
+
+.link-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+@media (min-width: 768px) {
+    .link-grid {
+        flex-direction: column;
+    }
+}
+
+.link-item {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    text-decoration: none;
+    color: var(--text-color);
+    padding: 1rem;
+    border-radius: 5px;
+    background-color: var(--bg-color-light);
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.link-item:hover {
+    background-color: var(--border-color);
+    transform: translateY(-5px);
+}
+
+.link-item img {
+    width: 40px;
+    height: 40px;
+    object-fit: contain;
+    border-radius: 5px;
+}
+
+.link-item span {
+    font-weight: bold;
+}
+
+/* 푸터 */
+.main-footer {
+    background: var(--bg-color-dark);
+    color: #aaa;
+    text-align: center;
+    padding: 1.5rem 1rem;
+    margin-top: auto;
+}
