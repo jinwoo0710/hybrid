@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BUSAN 심장자동재세동기 찾기</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>BUSAN 심장자동재세동기 찾기</h1>
+    </header>
+
+    <main>
+        <div class="search-container">
+            <input type="text" id="searchInput" placeholder="현재 위치 또는 주소를 입력하세요">
+            <button id="searchButton">검색</button>
+            <button id="currentLocationButton">현재 위치</button>
+        </div>
+
+        <div id="map">
+            <!-- 지도 표시 영역 -->
+            <iframe src="https://m.map.kakao.com/" width="100%" height="100%" frameborder="0" style="border:0;" allowfullscreen>
+            </iframe>
+        </div>
+
+        <div class="aed-list-container">
+            <h2>검색 결과</h2>
+            <ul id="aedList">
+                </ul>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2023. 부산광역시 자동심장충격기현황정보서비스</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
